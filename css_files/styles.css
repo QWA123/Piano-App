@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(112, 117, 37);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.piano {
+  display: flex;
+}
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+  border-radius: 5px;
+}
+.white {
+  --width: 100px;
+  background: white;
+  border: 1px black solid;
+}
+.white.active {
+  background: rgb(235, 228, 228);
+}
+.black.active {
+  background: rgb(7, 11, 47);
+}
+.black {
+  --width: 60px;
+  background: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  /* the div which comes later overlaps it */
+  /* -ve margin good use to produce overlaps */
+  z-index: 1;
+}
